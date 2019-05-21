@@ -1,0 +1,19 @@
+# Example:
+# [feat] Implement automated commit messages
+
+# Explain why this change is being made
+
+# --- COMMIT END ---
+# Tag can be 
+#    feat     (new feature)
+#    fix      (bug fix)
+#    update   (update a previous commit that is already in remote)
+#    refactor (refactoring code)
+#    style    (formatting, missing semi colons, etc; no code change)
+#    doc      (changes to documentation)
+#    test     (adding or refactoring tests; no production code change)
+#    version  (version bump/new release; no production code change)
+#    hack     (Temporary fix to make things move forward; please avoid it)
+#    WIP      (Work In Progress; for intermediate commits to keep patches reasonably sized)
+#    defaults (changes default options)
+# --------------------
