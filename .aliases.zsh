@@ -4,13 +4,13 @@
 # # For a full list of active aliases, run `alias`.
 # #
 # Aliases
-alias bynd="~/LocalHost/Private"
+alias bynd="~/LocalHost/Bynd"
 alias c="clear"
 alias gitconfig="vi ~/.gitconfig"
-alias local="~/LocalHost/Public"
+alias github="~/LocalHost/GitHub"
 alias npm-globals="npm list -g --depth 0"
 alias ohmyzsh="vi ~/.oh-my-zsh"
-alias pub="~/LocalHost/Public"
 alias restart="source ~/.zshrc"
 alias restart-audio="killall coreaudiod"
 alias zshconfig="vi ~/.zshrc"
+alias clone="npx degit"
