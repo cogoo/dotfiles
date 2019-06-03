@@ -12,7 +12,7 @@
 [commit]
 	template = /Users/colin.ogoo/.git-commit-template
 [http]
-	cookiefile = /Users/colin.ogoo/LocalHost/Private/gweb-miyagi/tmp/.gitcookies
+	cookiefile = /Users/colin.ogoo/LocalHost/Bynd/gweb-miyagi/tmp/.gitcookies
 [alias]
 	co = checkout
 	s = status --short
