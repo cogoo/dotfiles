@@ -17,7 +17,7 @@
 	co = checkout
 	s = status --short
 	c = cz
-	d = diff
+	d = diff -w -b
 	last = log --graph -1 HEAD
 	b = branch
 	a = add
