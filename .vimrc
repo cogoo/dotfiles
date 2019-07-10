@@ -7,6 +7,12 @@ set number
 " Auto run nerd tree
 autocmd vimenter * NERDTree
 
+" Close Vim if NerdTree is the only one open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Key mappings for nerdtree
+map  <C-l> :tabn<CR>
+
 " Install VIM plugin manager
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs

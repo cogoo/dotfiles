@@ -22,7 +22,8 @@
 	b = branch
 	a = add
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	amend = add -A && git commit --amend --no-edit
+	amend = !git a -A && git commit --amend --no-edit
+	amend-commit = !git a -A && git commit --amend
 	p = push origin $(git rev-parse --abbrev-ref HEAD)
 	new = checkout -b
 	f = fetch --all
@@ -30,8 +31,5 @@
 	clear = reset --hard
   undo-commit = reset HEAD~1
 	unstage = reset HEAD --
-	discard = checkout --
-	discard-all = checkout -- . ..
-	hide = update-index --assume-unchanged
-	unhide = update-index --no-assume-unchanged
-	hidden = ls-files -v | grep '^h' 
+	discard = checkout -- 
+	save = stash save -u 
