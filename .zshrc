@@ -20,3 +20,9 @@ source $HOME/.aliases.zsh
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
+
+# The next line updates PATH for the Google Cloud SDK.
+
+if [ -f '/Users/colin.ogoo/LocalHost/Global/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/colin.ogoo/LocalHost/Global/google-cloud-sdk/path.zsh.inc'; fi
+
+if [ -f '/Users/colin.ogoo/LocalHost/Global/flutter/path.zsh.inc' ]; then . '/Users/colin.ogoo/LocalHost/Global/flutter/path.zsh.inc'; fi
