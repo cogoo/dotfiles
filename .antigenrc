@@ -13,6 +13,7 @@ antigen bundle ng
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle leafgarland/typescript-vim
 
 # Load the theme.
 antigen theme miloshadzic
