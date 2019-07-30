@@ -11,5 +11,5 @@ for i in ${FILES_TO_SYMLINK[@]}
 do
   echo "📦 Creating symbolic link for: ${i}"
   # Create Symbolic link for aliases
-  ln -s ~/.dotfiles/${i} ~/${i}
+  ln -s -f ~/.dotfiles/${i} ~/${i}
 done
