@@ -29,7 +29,7 @@
 	f = fetch --all
 	alias = config --get-regexp ^alias\\.
 	clear = reset --hard
-  undo-commit = reset HEAD~1
+	undo-commit = reset HEAD~1
 	unstage = reset HEAD --
 	discard = checkout -- 
 	save = stash save -u 

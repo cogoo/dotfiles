@@ -6,9 +6,9 @@ git pull origin master;
 #set default terminal to zsh
 #chsh -s /bin/zsh
 
-./.apps.sh
-./.vscode-extensions.sh
-./.symlinks.sh
+./apps.sh
+./vscode-extensions.sh
+./symlinks.sh
 
 cd ~
 echo "Creating folder structure..."
