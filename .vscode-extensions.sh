@@ -1,0 +1,88 @@
+#!/bin/sh
+
+EXTENSIONS=(
+    Angular.ng-template
+    ardenivanov.svelte-intellisense
+    Arjun.swagger-viewer
+    ashinzekene.nestjs
+    attilabuti.vscode-mjml
+    be5invis.vscode-custom-css
+    cev.overnight
+    Chad.nord-operator-theme
+    ChakrounAnas.turbo-console-log
+    christian-kohler.npm-intellisense
+    christian-kohler.path-intellisense
+    CoenraadS.bracket-pair-colorizer-2
+    cssho.vscode-svgviewer
+    cyrilletuzi.angular-schematics
+    Dart-Code.dart-code
+    Dart-Code.flutter
+    DavidAnson.vscode-markdownlint
+    dbaeumer.vscode-eslint
+    eamodio.gitlens
+    EditorConfig.EditorConfig
+    Equinusocio.vsc-material-theme
+    erd0s.terraform-autocomplete
+    esbenp.prettier-vscode
+    fdom.stencil-snippets
+    fivethree.vscode-ionic-snippets
+    fivethree.vscode-svelte-snippets
+    formulahendry.auto-rename-tag
+    ghaschel.vscode-angular-html
+    ghmcadams.lintlens
+    googlecloudtools.cloudcode
+    guillaumedoutriaux.name-that-color
+    infinity1207.angular2-switcher
+    ionutvmi.path-autocomplete
+    ipatalas.vscode-postfix-ts
+    jakethashi.vscode-angular2-emmet
+    JamesBirtles.svelte-vscode
+    joelday.docthis
+    johnpapa.Angular2
+    johnpapa.vscode-peacock
+    jsayol.firebase-explorer
+    kenhowardpdx.vscode-gist
+    liviuschera.noctis
+    Luxcium.pop-n-lock-theme-vscode
+    mauve.terraform
+    Mikael.Angular-BeastCode
+    mikestead.dotenv
+    mrmlnc.vscode-scss
+    ms-azuretools.vscode-azurefunctions
+    ms-azuretools.vscode-docker
+    ms-python.python
+    ms-vscode.azure-account
+    ms-vscode.vscode-typescript-tslint-plugin
+    ms-vsliveshare.vsliveshare
+    msjsdiag.debugger-for-chrome
+    natemoo-re.vscode-stencil-tools
+    natewallace.angular2-inline
+    nrwl.angular-console
+    oderwat.indent-rainbow
+    PKief.material-icon-theme
+    pnp.polacode
+    pranaygp.vscode-css-peek
+    quicktype.quicktype
+    ricard.postcss
+    RobbOwen.synthwave-vscode
+    rogalmic.bash-debug
+    Shan.code-settings-sync
+    shanejarvie.hybrid-theme
+    shinnn.stylelint
+    steoates.autoimport
+    stringham.move-ts
+    taniarascia.new-moon-vscode
+    Telerik.nativescript
+    VisualStudioExptTeam.vscodeintellicode
+    vscode-icons-team.vscode-icons
+    wayou.vscode-todo-highlight
+    wix.vscode-import-cost
+    wwwalkerrun.nativescript-ng2-snippets
+    yatki.vscode-surround
+    yzhang.markdown-all-in-one
+    Zignd.html-css-class-completion
+)
+
+for ext in ${EXTENSIONS[@]}; do 
+    code --install-extension ${ext}
+done

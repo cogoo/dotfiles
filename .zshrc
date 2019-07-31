@@ -1,5 +1,5 @@
 # Init antigen
-source $HOME/.antigen.zsh
+source $HOME/.antigen.sh
 antigen init $HOME/.antigenrc
 
 # ZSH Settings
@@ -12,8 +12,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-source $HOME/.functions.zsh
-source $HOME/.aliases.zsh
+source $HOME/.functions
+source $HOME/.aliases
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -7,4 +7,5 @@ chsh -s /bin/zsh
 cd ~
 
 source .apps.sh
-source .symlinks.zsh
+source .symlinks.sh
+source .vscode-extensions.sh
