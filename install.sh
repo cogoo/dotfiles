@@ -17,3 +17,4 @@ git pull origin master;
 # unset doIt;
 
 source .symlinks.zsh
+source .apps.sh
