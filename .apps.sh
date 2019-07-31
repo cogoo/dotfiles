@@ -1,6 +1,7 @@
 #!/bin/sh
 
-echo "Starting bootstrapping"
+#set -ex 
+echo "🚀 Starting bootstrap"
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
@@ -12,7 +13,7 @@ brew update
 
 #Packages
 
-PACAKAGES=(
+PACKAGES=(
 	git
 	npm
 	nvm
@@ -21,35 +22,39 @@ PACAKAGES=(
 	vim
 )
 
-echo "Installing packages..."
-brew install ${PACKAGES[@]}
+echo "📦 Installing packages..."
+for pkg in ${PACKAGES[@]}; do
+  	echo "📦 Installing: ${pkg}"
+	brew install ${pkg}
+done
 
-echo "Cleaning up..."
+echo "🛀🏽 Cleaning up..."
 brew cleanup
 
 #Apps
-
-echo "Installing cask"
-brew install caskroom/cask/brew-cask
+brew tap homebrew/cask-versions
 
 CASKS=(
 	station
 	visual-studio-code
 	firefox-developer-edition
-	google-chrome
 	iterm2
 	insomnia
+	google-chrome
 	docker
-	virtual-box
+	virtualbox
 	dash
 )
 
-echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
+
+for app in ${CASKS[@]}; do
+	echo "📦 Installing ${app}"
+	brew cask install ${app}
+done
 
 #Fonts
 
-echo "Installing fonts..."
+echo "📦 Installing fonts..."
 brew tap caskroom/fonts
 
 FONTS=(
@@ -60,19 +65,22 @@ brew cask install ${FONTS[@]}
 
 #Node
 
-echo "Installing Global NPM packages..."
 NPM_GLOBALS=(
-	@angular-cli
+	@angular/cli
 	@angular-devkit/schematics-cli
 	@nestjs/cli
 	@nrwl/schematics
 	commitizen
+	nvm
 	git-cz
 	np
 	yarn
 )
 
-npm i -g ${NPM_GLOBALS[@]}
+echo "📦 Installing Global NPM packages..."
+for pkg in ${NPM_GLOBALS[@]}
+	do npm i -g ${pkg}
+done
 
 
 echo "Creating folder structure..."

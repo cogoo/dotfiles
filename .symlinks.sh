@@ -9,7 +9,7 @@ FILES_TO_SYMLINK=(`find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -n
 
 for i in ${FILES_TO_SYMLINK[@]}
 do
-  echo "📦 Creating symbolic link for: ${i}"
+  echo "🔗 Creating symbolic link for: ${i}"
   # Create Symbolic link for aliases
   ln -s -f ~/.dotfiles/${i} ~/${i}
 done
