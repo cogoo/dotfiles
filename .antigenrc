@@ -5,6 +5,8 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle npm
 antigen bundle nvm
+antigen bundle tmux
+antigen bundle tmuxinator
 antigen bundle yarn
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-autosuggestions
