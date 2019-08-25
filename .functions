@@ -35,19 +35,31 @@ og-nx-add() {
 
 mux() {
   if [ "$1" = "ls" ]; then
-    tmux list-sessions
+    echo "Use the default tmux command"
     return
   fi
 
   if [ "$1" = "new" ]; then
-    tmux new-session -s $2
+    if [ -n "$2" ]; then
+      tmux new-session -s $2
+      return
+    else
+      echo "😅 You must specify a session name. Try my_session"
+    fi
     return
   fi
 
   if [ "$1" = "a" ]; then
-    tmux a -t $2
+    if [ -n "$2" ]; then
+      tmux a -t $2
+      return
+    else
+      echo "😅 specify what session to attach to. Available sessions: \n"
+      tmux ls
+    fi
+
     return
   fi
 
-  echo "🤓"
+  echo "😅 \n Available commands are ls, new, a"
 }
