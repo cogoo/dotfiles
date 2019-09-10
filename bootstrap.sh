@@ -9,4 +9,4 @@ git pull origin master;
 ./bootstrap/install.sh
 ./vscode/install.sh
 ./antibody/install.sh
-./symlinks.sh
+./symlinks/symlinks.sh
