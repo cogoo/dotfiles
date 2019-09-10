@@ -7,7 +7,7 @@ git pull origin master;
 #chsh -s /bin/zsh
 
 ./apps.sh
-./vscode-extensions.sh
+./vscode/install.sh
 ./antibody/install.sh
 ./symlinks.sh
 
