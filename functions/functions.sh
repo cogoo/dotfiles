@@ -40,6 +40,10 @@ update_antibody_plugins() {
   antibody update
 }
 
+update_vscode_extensions() {
+	code --list-extensions >$DOTFILES/vscode/extensions.txt
+}
+
 mux() {
   if [ "$1" = "ls" ]; then
     echo "Use the default tmux command"
