@@ -31,5 +31,5 @@ ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SL
 . $HOME/.zsh_plugins.sh
 
 # Init
-. $HOME/.functions
-. $HOME/.aliases
+. $DOTFILES/functions/functions.sh
+. $DOTFILES/alias/alias.sh

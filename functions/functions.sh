@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Auto switch node version
 load-nvmrc() {
   local node_version="$(nvm version)"

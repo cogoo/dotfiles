@@ -1,8 +1,5 @@
-# # Set personal aliases, overriding those provided by oh-my-zsh libs,
-# # plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# # For a full list of active aliases, run `alias`.
-# #
+#!/bin/sh
+
 # Aliases
 alias restart="source ~/.zshrc"
 
@@ -21,7 +18,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias get-app="brew cask install"
-alias nx-create="~/.dotfiles/scripts/nx.zsh"
+alias nx-create="~/.dotfiles/scripts/nx.sh"
 
 # Docker
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"

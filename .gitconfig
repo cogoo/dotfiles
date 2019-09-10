@@ -9,8 +9,6 @@
 [user]
 	name = Colin Ogoo
 	email = colin.ogoo@bynd.com
-[commit]
-	template = /Users/colin.ogoo/.git-commit-template
 [http]
 	cookiefile = /Users/colin.ogoo/LocalHost/Bynd/gweb-miyagi/tmp/.gitcookies
 [alias]

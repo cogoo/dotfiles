@@ -124,6 +124,13 @@ install_antibody() {
 	brew install antibody
 }
 
+setup_project_folders() {
+  cd ~
+  echo "Creating folder structure..."
+  [[ ! -d LocalHost ]] && mkdir -p LocalHost/GitHub
+  [[ ! -d LocalHost ]] && mkdir -p LocalHost/Global
+}
+
 install_homebrew
 update_homebrew
 install_packages
@@ -133,6 +140,7 @@ install_nvm
 install_node
 install_npm_packages
 install_antibody
+setup_project_folders
 #cleanup_homebrew
 
 echo "Bootstrapping complete"
