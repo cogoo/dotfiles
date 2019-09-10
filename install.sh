@@ -8,8 +8,10 @@ git pull origin master;
 
 ./apps.sh
 ./vscode-extensions.sh
+./antibody/install.sh
 ./symlinks.sh
 
 cd ~
 echo "Creating folder structure..."
 [[ ! -d LocalHost ]] && mkdir -p LocalHost/GitHub
+[[ ! -d LocalHost ]] && mkdir -p LocalHost/Global
