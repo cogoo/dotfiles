@@ -119,6 +119,11 @@ install_npm_packages() {
   done
 }
 
+install_antibody() {
+	brew tap | grep -q 'getantibody/tap' || brew tap getantibody/tap
+	brew install antibody
+}
+
 install_homebrew
 update_homebrew
 install_packages
@@ -127,6 +132,7 @@ install_fonts
 install_nvm
 install_node
 install_npm_packages
+install_antibody
 #cleanup_homebrew
 
 echo "Bootstrapping complete"
