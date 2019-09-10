@@ -9,7 +9,7 @@ alias restart="source ~/.zshrc"
 # Mac
 alias hide-desktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias show-desktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias afk="open -a /System/Library/CoreServices/ScreenSaverEngine.app"
 alias restart-audio="killall coreaudiod"
 
 # NPM
