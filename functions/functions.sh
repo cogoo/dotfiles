@@ -74,3 +74,28 @@ mux() {
 
   echo "😅 \n Available commands are ls, new, a"
 }
+
+# create custom vscode profile
+function create_vscode_profile () {
+	if [ "$1" ]; then
+		 # body
+		 directory="$HOME/.dotfiles/vscode/profiles/$1"
+		 if [ -d "$directory" ]; then
+			 echo "😅 Profile already exists"
+
+			 return
+		 fi
+
+		 echo "📦 Creating profile $1"
+		 mkdir -p "$HOME/.dotfiles/vscode/profiles/$1/exts"
+
+		 echo "🔗 Creating alias for profile"
+		 echo "\n#Vscode profile \nalias code-$1=\"code --extensions-dir $HOME/.dotfiles/vscode/profiles/$1/exts\"" >> "$HOME/.dotfiles/alias/alias.sh"
+
+		 echo "🛀🏽 Alias code-$1 created"
+	else
+		 # body
+		 echo "😅 Please specify a name"
+		 return
+	fi
+}
