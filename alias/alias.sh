@@ -34,3 +34,6 @@ alias github="~/LocalHost/GitHub"
 alias zshconfig="vim ~/.zshrc"
 alias vi="vim"
 alias c="clear"
+
+# Vscode profile
+alias code-shell="code --extensions-dir /Users/colin.ogoo/.dotfiles/vscode/profiles/shell/exts"
