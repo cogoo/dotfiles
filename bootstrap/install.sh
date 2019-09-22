@@ -21,10 +21,10 @@ CASKS=(
 	insomnia
 	google-cloud-sdk
 	obinslab-starter
-	#google-chrome
 	docker
 	virtualbox
 	dash
+	#google-chrome
 )
 
 FONTS=(
@@ -49,7 +49,7 @@ install_homebrew() {
 	fi
 
 	echo "😎 Installing homebrew..."
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"s
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
 update_homebrew() {
@@ -66,8 +66,8 @@ install_nvm() {
 	) && \. "$NVM_DIR/nvm.sh"
 }
 
-install_node() {
-	echo "😎 Installing Node..."
+setup_node() {
+	echo "😎 Setting up Node w/ NVM ..."
 	if [ -z "$NVM_DIR" ]; then
 		# NVM_DIR is undefined, so it's not been initialised
 		NVM_DIR="$HOME/.nvm"
@@ -77,6 +77,11 @@ install_node() {
 
 	nvm install lts/dubnium
 	nvm alias default lts/dubnium
+}
+
+install_rvm() {
+	echo "😎 Installing RVM..."
+	ruby -e "$(curl -sSL https://get.rvm.io | bash -s stable --ruby --ignore-dotfiles)"
 }
 
 cleanup_homebrew() {
@@ -124,6 +129,12 @@ install_antibody() {
 	brew install antibody
 }
 
+install_tmuxinator() {
+	# Req: >= ruby@2.4.6
+	echo "📦 Installing TMUXinator..."
+	gem install tmuxinator
+}
+
 setup_project_folders() {
 	cd ~
 	echo "Creating folder structure..."
@@ -133,12 +144,14 @@ setup_project_folders() {
 
 install_homebrew
 update_homebrew
+install_rvm
 install_packages
 install_apps
 install_fonts
 install_nvm
-install_node
+setup_node
 install_npm_packages
+install_tmuxinator
 install_antibody
 setup_project_folders
 #cleanup_homebrew

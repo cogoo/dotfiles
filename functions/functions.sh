@@ -44,37 +44,6 @@ update_vscode_extensions() {
 	code --list-extensions >$DOTFILES/vscode/extensions.txt
 }
 
-mux() {
-  if [ "$1" = "ls" ]; then
-    echo "Use the default tmux command"
-    return
-  fi
-
-  if [ "$1" = "new" ]; then
-    if [ -n "$2" ]; then
-      tmux new-session -s $2
-      return
-    else
-      echo "😅 You must specify a session name. Try my_session"
-    fi
-    return
-  fi
-
-  if [ "$1" = "a" ]; then
-    if [ -n "$2" ]; then
-      tmux a -t $2
-      return
-    else
-      echo "😅 specify what session to attach to. Available sessions: \n"
-      tmux ls
-    fi
-
-    return
-  fi
-
-  echo "😅 \n Available commands are ls, new, a"
-}
-
 # create custom vscode profile
 function create_vscode_profile () {
 	if [ "$1" ]; then
