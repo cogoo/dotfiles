@@ -44,6 +44,7 @@ ms-vsliveshare.vsliveshare
 msjsdiag.debugger-for-chrome
 natemoo-re.vscode-stencil-tools
 natewallace.angular2-inline
+norato.storybook-snippets
 nrwl.angular-console
 PKief.material-icon-theme
 pnp.polacode

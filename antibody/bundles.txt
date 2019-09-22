@@ -19,4 +19,4 @@ robbyrussell/oh-my-zsh path:plugins/ng
 robbyrussell/oh-my-zsh path:plugins/tmuxinator
 
 # Theme
-robbyrussell/oh-my-zsh path:themes/miloshadzic.zsh-theme
+# robbyrussell/oh-my-zsh path:themes/miloshadzic.zsh-theme

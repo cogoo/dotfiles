@@ -11,6 +11,7 @@ PACKAGES=(
 	vim
 	pyenv
 	npx
+	starship
 )
 
 CASKS=(
