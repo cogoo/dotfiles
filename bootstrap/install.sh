@@ -12,6 +12,7 @@ PACKAGES=(
 	pyenv
 	npx
 	starship
+	exa
 )
 
 CASKS=(

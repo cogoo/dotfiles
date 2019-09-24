@@ -6,10 +6,9 @@ caarlos0/zsh-git-sync kind:path
 zsh-users/zsh-syntax-highlighting
 leafgarland/typescript-vim
 zsh-users/zsh-autosuggestions
-robbyrussell/oh-my-zsh
-
 zsh-users/zsh-completions
 lukechilds/zsh-better-npm-completion
+robbyrussell/oh-my-zsh
 
 # Oh-my-zsh Plugins
 robbyrussell/oh-my-zsh path:plugins/git
@@ -17,6 +16,4 @@ robbyrussell/oh-my-zsh path:plugins/tmux
 robbyrussell/oh-my-zsh path:plugins/yarn
 robbyrussell/oh-my-zsh path:plugins/ng
 robbyrussell/oh-my-zsh path:plugins/tmuxinator
-
-# Theme
-# robbyrussell/oh-my-zsh path:themes/miloshadzic.zsh-theme
+robbyrussell/oh-my-zsh path:plugins/z

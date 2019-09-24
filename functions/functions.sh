@@ -22,7 +22,7 @@ add-zsh-hook chpwd load-nvmrc
 
 # List files when switching directory
 chpwd() {
-  clear && ls -la
+  clear && exa -la
 }
 
 # Helpers for Nx library
