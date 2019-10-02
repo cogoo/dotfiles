@@ -28,9 +28,7 @@ alias docker-clear='docker-kill-all;docker-rm-all'
 alias docker-rmi-all='docker rmi -f `docker images -q`'
 
 # Shortcuts
-alias bynd="~/LocalHost/Bynd"
 alias gitconfig="vim ~/.gitconfig"
-alias github="~/LocalHost/GitHub"
 alias zshconfig="vim ~/.zshrc"
 alias vi="vim"
 alias c="clear"

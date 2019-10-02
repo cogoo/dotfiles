@@ -45,7 +45,7 @@ update_vscode_extensions() {
 }
 
 # create custom vscode profile
-function create_vscode_profile () {
+create_vscode_profile () {
 	if [ "$1" ]; then
 		 # body
 		 directory="$HOME/.dotfiles/vscode/profiles/$1"
@@ -67,4 +67,10 @@ function create_vscode_profile () {
 		 echo "😅 Please specify a name"
 		 return
 	fi
+}
+
+# find all node_modules folders and list the size
+audit_node_modules() {
+	echo '🏋🏽‍♂️  finding node_modules folders \n'
+	npx npkill
 }

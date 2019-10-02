@@ -1,0 +1,26 @@
+[directory]
+style = "bold blue"
+
+[character]
+symbol = "$"
+error_symbol = "✗"
+use_symbol_for_status = true
+
+[package]
+disabled = true
+
+[memory_usage]
+show_percentage = true
+show_swap = true
+threshold = -1
+icon = " "
+style = "bold dimmed white"
+disabled = false
+
+[git_branch]
+style = "fg:underline bold dimmed white"
+
+[git_status]
+style = "bold cyan"
+show_sync_count = true
+
