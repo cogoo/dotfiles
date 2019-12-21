@@ -38,6 +38,7 @@ alias c="clear"
 # alias ls="tree -C -ap -L 1 -I node_modules"
 alias ls="exa"
 alias tree="tree -C -ap -I node_modules"
+alias ports-in-use="lsof -PiTCP -sTCP:LISTEN"
 
 # Vscode profile
 alias code-shell="code --extensions-dir /Users/colin.ogoo/.dotfiles/vscode/profiles/shell/exts"

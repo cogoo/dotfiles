@@ -10,6 +10,7 @@ PACKAGES=(
 	tree
 	vim
 	pyenv
+	pyenv-virtualenv
 	npx
 	starship
 	exa

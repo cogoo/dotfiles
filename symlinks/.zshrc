@@ -42,3 +42,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 #
 # Initiate Starship
 eval "$(starship init zsh)"
+
+# Initialize PYENV
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
