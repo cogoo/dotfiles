@@ -74,3 +74,8 @@ audit_node_modules() {
 	echo '🏋🏽‍♂️  finding node_modules folders \n'
 	npx npkill
 }
+
+use_latest_xcode() {
+	sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+ 	sudo xcodebuild -runFirstLaunch
+}

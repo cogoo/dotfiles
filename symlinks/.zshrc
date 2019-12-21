@@ -1,11 +1,6 @@
 # Set dotfiles path
 export DOTFILES="$HOME/.dotfiles"
 
-# Set manual global installs
-if [ -d "$HOME/LocalHost/Global" ]; then
-  export GLOBAL_INSTALLS_PATH ="$HOME/LocalHost/Global"
-fi
-
 # ZSH Settings
 COMPLETION_WAITING_DOTS="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
@@ -18,8 +13,10 @@ export EDITOR='vim'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '$GLOBAL_INSTALLS_PATH/google-cloud-sdk/path.zsh.inc' ]; then . '$GLOBAL_INSTALLS_PATH/google-cloud-sdk/path.zsh.inc'; fi
+# Set manual global installs
+if [ -d "$HOME/LocalHost/Global" ]; then
+  export GLOBAL_INSTALLS_PATH="$HOME/LocalHost/Global"
+fi
 
 # The next line updates PATH for Flutter.
 if [ -f '$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc' ]; then . '$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc'; fi
@@ -47,3 +44,6 @@ eval "$(starship init zsh)"
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Add flutter to path
+export PATH="$PATH:$GLOBAL_INSTALLS_PATH/flutter/bin"

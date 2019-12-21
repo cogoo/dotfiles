@@ -27,6 +27,7 @@ CASKS=(
 	docker
 	virtualbox
 	dash
+	fastlane
 	#google-chrome
 )
 
@@ -145,6 +146,14 @@ setup_project_folders() {
 	[[ ! -d LocalHost ]] && mkdir -p LocalHost/Global
 }
 
+install_flutter(){
+	cd "$HOME/LocalHost/Global"
+	git clone https://github.com/flutter/flutter.git
+
+	# Install cocoapods
+	gem install cocoapods
+}
+
 install_homebrew
 update_homebrew
 install_rvm
@@ -157,6 +166,7 @@ install_npm_packages
 install_tmuxinator
 install_antibody
 setup_project_folders
+install_flutter
 #cleanup_homebrew
 
 echo "Bootstrapping complete"
