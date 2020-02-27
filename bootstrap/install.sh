@@ -160,6 +160,10 @@ install_flutter(){
 	gem install cocoapods
 }
 
+miscellaneous_additions() {
+	complete -C _fastlane_complete.rb fastlane
+}
+
 install_homebrew
 update_homebrew
 install_rvm
