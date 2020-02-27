@@ -75,6 +75,16 @@ audit_node_modules() {
 	npx npkill
 }
 
+fix_rvm() {
+	brew reinstall ruby vim
+}
+
+add_missing_functions() {
+	echo "🎗 Run only once"
+	complete -C _fastlane_complete.rb fastlane
+}
+
+
 use_latest_xcode() {
 	sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
  	sudo xcodebuild -runFirstLaunch

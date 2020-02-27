@@ -18,5 +18,5 @@ done
 
 echo "⛓ Linking folders"
 
-ln -s -f ~/.dotfiles/config/startship.toml ~/.config/starship.toml
+ln -s -f ~/.dotfiles/config/starship.toml ~/.config/starship.toml
 ln -s -f ~/.dotfiles/config/tmuxinator ~/.config/tmuxinator
