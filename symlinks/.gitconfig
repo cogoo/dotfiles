@@ -10,7 +10,7 @@
 	name = Colin Ogoo
 	email = colin.ogoo@bynd.com
 [http]
-	cookiefile = /Users/colin.ogoo/LocalHost/bynd/gweb-miyagi/tmp/.gitcookies
+	cookiefile = /Users/colin.ogoo/.gitcookies
 [alias]
 	co = checkout
 	s = status --short

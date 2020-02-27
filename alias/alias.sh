@@ -28,7 +28,8 @@ alias docker-clear='docker-kill-all;docker-rm-all'
 alias docker-rmi-all='docker rmi -f `docker images -q`'
 
 # Tmux
-alias tk="tksv"
+alias tk="tkss"
+alias tls="tmux ls"
 
 # Shortcuts
 alias gitconfig="vim ~/.gitconfig"

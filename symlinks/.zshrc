@@ -30,6 +30,7 @@ ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SL
 # Init
 . $DOTFILES/functions/functions.sh
 . $DOTFILES/alias/alias.sh
+. ~/.fastlane/completions/completion.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -47,3 +48,9 @@ eval "$(pyenv virtualenv-init -)"
 
 # Add flutter to path
 export PATH="$PATH:$GLOBAL_INSTALLS_PATH/flutter/bin"
+
+# Setup JAVA environment variable
+export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+
+# Setup Miyagi SDK Root
+export MIYAGI_CLOUD_SDK_ROOT_DIR=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk

@@ -14,6 +14,7 @@ PACKAGES=(
 	npx
 	starship
 	exa
+	tmuxinator
 )
 
 CASKS=(
@@ -28,6 +29,7 @@ CASKS=(
 	virtualbox
 	dash
 	fastlane
+	alfred
 	#google-chrome
 )
 
@@ -44,6 +46,10 @@ NPM_GLOBALS=(
 	git-cz
 	np
 	yarn
+)
+
+GEMS=(
+	rest-client
 )
 
 install_homebrew() {

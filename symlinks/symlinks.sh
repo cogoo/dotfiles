@@ -15,3 +15,7 @@ do
   # Create Symbolic link for aliases
   ln -s -f ~/.dotfiles/symlinks/${i} ~/${i}
 done
+
+echo "⛓ Linking folders"
+
+cd ~/.dotfiles/config
