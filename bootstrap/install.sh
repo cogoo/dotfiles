@@ -91,7 +91,7 @@ setup_node() {
 
 install_rvm() {
 	echo "😎 Installing RVM..."
-	ruby -e "$(curl -sSL https://get.rvm.io | bash -s stable --ruby --ignore-dotfiles)"
+	ruby -e "$(curl -sSL https://get.rvm.io | bash -s stable --ruby --auto-dotfiles)"
 }
 
 cleanup_homebrew() {
