@@ -15,6 +15,7 @@ PACKAGES=(
 	starship
 	exa
 	tmuxinator
+	fastlane
 )
 
 CASKS=(
@@ -28,8 +29,8 @@ CASKS=(
 	docker
 	virtualbox
 	dash
-	fastlane
 	alfred
+	java
 	#google-chrome
 )
 

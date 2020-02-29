@@ -10,10 +10,7 @@ use_symbol_for_status = true
 disabled = true
 
 [memory_usage]
-show_percentage = true
-show_swap = true
-threshold = -1
-icon = " "
+threshold = 50
 style = "bold dimmed white"
 disabled = false
 

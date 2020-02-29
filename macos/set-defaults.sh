@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "👀 Setting mac preferences"
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -42,5 +44,5 @@ sudo pmset -c sleep 0
 # Disable screen saver
 defaults write com.apple.screensaver idleTime 0
 
-# Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
+# Sleep the display after 60 minutes
+sudo pmset -a displaysleep 60

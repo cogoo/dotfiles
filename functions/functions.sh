@@ -25,16 +25,6 @@ chpwd() {
   clear && exa -la
 }
 
-# Helpers for Nx library
-og-nx-add() {
-  if [ "$#" = 3 ]; then
-    echo "📦  Creating $1 $2"
-    ng g @nrwl/$1:$2 $3
-  else
-    echo "🚫  This command requires 3 parameters"
-  fi
-}
-
 update_antibody_plugins() {
   antibody bundle < ~/.dotfiles/antibody/bundles.txt >~/.zsh_plugins.sh
   antibody update
