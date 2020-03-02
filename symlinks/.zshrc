@@ -18,28 +18,34 @@ if [ -d "$HOME/LocalHost/Global" ]; then
   export GLOBAL_INSTALLS_PATH="$HOME/LocalHost/Global"
 fi
 
+# Set brew cask install root
+export CASKROOM="/usr/local/Caskroom"
+
+
 # The next line updates PATH for Flutter.
-if [ -f '$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc' ]; then . '$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc'; fi
+if [ -f '$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc' ]; then
+	. '$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc';
+fi
 
 # Antibody oh-my-zsh fix
 ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
 
 # Init antibody plugins
-. $HOME/.zsh_plugins.sh
+. `$HOME/.zsh_plugins.sh`
 
 # Init
-. $DOTFILES/functions/functions.sh
-. $DOTFILES/alias/alias.sh
-. ~/.fastlane/completions/completion.sh
+. `$DOTFILES/functions/functions.sh`
+. `$DOTFILES/alias/alias.sh`
+
+if [ -f "$HOME/.fastlane/completions/completion.sh" ]; then
+	. '$HOME.fastlane/completions/completion.sh'
+fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# If you installed the Google Cloud SDK, the tool is located at [PATH_TO_CLOUD_SDK]/google-cloud-sdk/bin/dev_appserver.py
-#  source '$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-#
 # Initiate Starship
 eval "$(starship init zsh)"
 
@@ -52,7 +58,9 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$PATH:$GLOBAL_INSTALLS_PATH/flutter/bin"
 
 # Setup JAVA environment variable
-export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+export 'JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
 
-# Setup Miyagi SDK Root
-export MIYAGI_CLOUD_SDK_ROOT_DIR=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
+# Setup devserverapp.py
+if [ -f '$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then
+	. '$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc';
+fi
