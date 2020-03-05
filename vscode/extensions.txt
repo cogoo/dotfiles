@@ -34,6 +34,7 @@ foxundermoon.shell-format
 ghaschel.vscode-angular-html
 ghmcadams.lintlens
 guillaumedoutriaux.name-that-color
+hediet.debug-visualizer
 Heron.firefox-devtools-theme
 hex-ci.stylelint-plus
 heybourn.headwind
