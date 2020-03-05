@@ -9,11 +9,6 @@ use_symbol_for_status = true
 [package]
 disabled = true
 
-[memory_usage]
-threshold = 50
-style = "bold dimmed white"
-disabled = false
-
 [git_branch]
 style = "fg:underline bold dimmed white"
 
