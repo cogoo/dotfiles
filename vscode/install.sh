@@ -6,7 +6,7 @@ KEYBINDINGS_FILE="$HOME/.dotfiles/vscode/keybindings.json"
 SNIPPETS_DIR="$HOME/.dotfiles/vscode/snippets"
 
 if [ -f "$EXTENSIONS_FILE" ]; then
-	echo "🎙  nstalling VS code extensions \\n"
+	echo "🎙  Installing VS code extensions \\n"
 	while IFS= read -r extension
 	do
 	code --install-extension "$extension"
@@ -25,5 +25,5 @@ fi
 
 if [ -d "$SNIPPETS_DIR" ]; then
 	echo "🎙  Copying VS code snippets  \\n"
-	cp -R "$SNIPPETS_DIR" "$HOME/Library/Application Support/Code/User/sinppets"
+	cp -R "$SNIPPETS_DIR" "$HOME/Library/Application Support/Code/User"
 fi

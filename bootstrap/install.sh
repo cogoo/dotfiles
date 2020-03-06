@@ -149,14 +149,27 @@ install_tmuxinator() {
 }
 
 setup_project_folders() {
-	cd ~
+	GITHUB_DIR="$HOME/LocalHost/GitHub"
+	GLOBAL_DIR="$HOME/LocalHost/Global"
+	BYND_DIR="$HOME/LocalHost/BYND"
+
 	echo "Creating folder structure..."
-	[[ ! -d LocalHost ]] && mkdir -p LocalHost/GitHub
-	[[ ! -d LocalHost ]] && mkdir -p LocalHost/Global
+
+	if ! [ -d "$GITHUB_DIR" ]; then
+		mkdir -p "$GITHUB_DIR"
+	fi
+
+	if ! [ -d "$GLOBAL_DIR" ]; then
+		mkdir -p "$GLOBAL_DIR"
+	fi
+
+	if ! [ -d "$BYND_DIR" ]; then
+		mkdir -p "$BYND_DIR"
+	fi
 }
 
 install_flutter(){
-	cd "$HOME/LocalHost/Global"
+	cd "$GLOBAL_DIR"
 	git clone https://github.com/flutter/flutter.git
 
 	# Install cocoapods
