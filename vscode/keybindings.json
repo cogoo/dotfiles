@@ -1,0 +1,200 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "cmd+l",
+    "command": "turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "-turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "shift+cmd+l shift+cmd+/",
+    "command": "turboConsoleLog.commentAllLogMessages"
+  },
+  {
+    "key": "ctrl+alt+q",
+    "command": "-turboConsoleLog.commentAllLogMessages"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "turboConsoleLog.deleteAllLogMessages",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "-turboConsoleLog.deleteAllLogMessages"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "turboConsoleLog.uncommentAllLogMessages"
+  },
+  {
+    "key": "ctrl+alt+u",
+    "command": "-turboConsoleLog.uncommentAllLogMessages"
+  },
+  {
+    "key": "cmd+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "cmd+2",
+    "command": "-workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "ctrl+cmd+left",
+    "command": "-workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "ctrl+cmd+left",
+    "command": "-workbench.action.terminal.resizePaneLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+cmd+right",
+    "command": "-workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "ctrl+cmd+right",
+    "command": "-workbench.action.terminal.resizePaneRight",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+cmd+left",
+    "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "-workbench.action.openPreviousRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "ctrl+cmd+right",
+    "command": "workbench.action.openNextRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "alt+cmd+w",
+    "command": "workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "alt+cmd+t",
+    "command": "-workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "cmd+k b",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "shift+enter",
+    "command": "extension.jumpy-word",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "Escape",
+    "command": "extension.jumpy-exit",
+    "when": "editorTextFocus && jumpy.isJumpyMode"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "editor.action.inspectTMScopes"
+  },
+  {
+    "key": "cmd+3",
+    "command": "-workbench.action.focusThirdEditorGroup"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "shift+cmd+[IntlBackslash]",
+    "command": "perfview.show"
+  },
+  {
+    "key": "cmd+1",
+    "command": "-workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "gitlens:enabled && config.gitlens.keymap == 'chorded'"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm"
+  },
+  {
+    "key": "alt+h",
+    "command": "extension.switchTemplate"
+  },
+  {
+    "key": "shift+alt+o",
+    "command": "-extension.switchTemplate"
+  },
+  {
+    "key": "alt+c",
+    "command": "extension.switchStyle"
+  },
+  {
+    "key": "shift+alt+i",
+    "command": "-extension.switchStyle"
+  },
+  {
+    "key": "alt+s",
+    "command": "extension.switchSpec"
+  },
+  {
+    "key": "shift+alt+p",
+    "command": "-extension.switchSpec"
+  },
+  {
+    "key": "alt+t",
+    "command": "extension.switchTS"
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "-extension.switchTS"
+  },
+  {
+    "key": "cmd+k n",
+    "command": "extension.ntcReplace"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "cmd+left",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "spellright.addFromSelectionToWorkspaceDictionary",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+cmd+space",
+    "command": "editor.action.fixAll"
+  },
+  {
+    "key": "shift+alt+w",
+    "command": "spellright.addFromSelectionToUserDictionary"
+  }
+]

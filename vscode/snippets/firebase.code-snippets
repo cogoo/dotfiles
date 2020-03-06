@@ -1,0 +1,95 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Firebase Http Export": {
+    "scope": "typescript",
+    "prefix": [
+      "f-http",
+      "firebase-http"
+    ],
+    "description": "Firebase http export",
+    "body": [
+      "exports.${1:functionName} = functions.https.onRequest((req, res) => {",
+      "  $0",
+      "  res.status(${2:responseCode}).send(${3:responseMessage});",
+      "}"
+    ]
+  },
+  "Firebase helpers": {
+    "scope": "typescript",
+    "prefix": [
+      "f-helpers",
+      "f-utility"
+    ],
+    "description": "Firebase utilities",
+    "body": [
+      "function updateDoc(collection: string, docID: string, payload: {}) {",
+      "  const firestore = admin.firestore();",
+      "  return firestore",
+      "    .collection(collection)",
+      "    .doc(docID)",
+      "    .update(payload);",
+      "}",
+      "",
+      "function getDoc(collection: string, docID: string) {",
+      "  const firestore = admin.firestore();",
+      "  return firestore",
+      "    .collection(collection)",
+      "    .doc(docID)",
+      "    .get();",
+      "}",
+      "",
+      "function setDoc(collection: string, docID: string, payload: {}) {",
+      "  const firestore = admin.firestore();",
+      "  return firestore",
+      "    .collection(collection)",
+      "    .doc(docID)",
+      "    .set(payload);",
+      "}",
+      "",
+      "function mediaLinkToDownloadableUrl(mediaLink: string, firebaseStorageDownloadTokens: string) {",
+      "  let [firstPartUrl, secondPartUrl] = mediaLink.split('?');",
+      "",
+      "  firstPartUrl = firstPartUrl.replace(",
+      "    'https://www.googleapis.com/download/storage/v1',",
+      "    'https://firebasestorage.googleapis.com/v0'",
+      "  );",
+      "",
+      "  firstPartUrl += '?' + secondPartUrl.split('&')[1];",
+      "  firstPartUrl += '&token=' + firebaseStorageDownloadTokens;",
+      "",
+      "  return firstPartUrl;",
+      "}"
+    ]
+  },
+  "Firebase imports": {
+    "prefix": [
+      "f-imports",
+      "firebase-imports"
+    ],
+    "description": "Firebase imports",
+    "scope": "typescript",
+    "body": [
+      "import * as functions from 'firebase-functions';",
+      "import * as admin from 'firebase-admin';",
+      "",
+      "const config = functions.config();",
+      "",
+      "admin.initializeApp();"
+    ]
+  }
+}

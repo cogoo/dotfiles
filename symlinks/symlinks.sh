@@ -16,7 +16,12 @@ do
   ln -s -f ~/.dotfiles/symlinks/${i} ~/${i}
 done
 
-echo "⛓ Linking folders"
+echo "⛓ Linking files & folders"
 
-ln -s -f ~/.dotfiles/config/starship.toml ~/.config/starship.toml
-ln -s -f ~/.dotfiles/config/tmuxinator ~/.config/tmuxinator
+if ! [ -h "$HOME/.config/starship.toml" ]; then
+	ln -s -f ~/.dotfiles/config/starship.toml ~/.config/starship.toml
+fi
+
+if ! [ -h "$HOME/.config/tmuxinator" ]; then
+	ln -s -f ~/.dotfiles/config/tmuxinator ~/.config/tmuxinator
+fi
