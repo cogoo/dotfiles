@@ -20,7 +20,7 @@ Run the bootstrap script
 ~/.dotfiles/bootstrap.sh
 ```
 
-> The file should have the executable permission, if not enable by Running
+> The file should have the executable permission, if not, enable by running
 >
 > `chmod +x ~/.dotfiles/bootstrap.sh`
 
