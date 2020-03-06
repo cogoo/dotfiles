@@ -4,6 +4,9 @@
 
 echo "🚀 Starting bootstrap"
 
+# Ask for the administrator password upfront
+sudo -v
+
 PACKAGES=(
 	git
 	tmux
@@ -19,7 +22,6 @@ PACKAGES=(
 )
 
 CASKS=(
-	station
 	visual-studio-code
 	firefox-developer-edition
 	iterm2
@@ -31,7 +33,7 @@ CASKS=(
 	dash
 	alfred
 	java
-	#google-chrome
+	google-chrome
 )
 
 FONTS=(
