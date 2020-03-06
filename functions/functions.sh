@@ -26,25 +26,25 @@ chpwd() {
 }
 
 update_antibody_plugins() {
-  antibody bundle < ~/.dotfiles/antibody/bundles.txt > ~/.zsh_plugins.sh
+  antibody bundle < "$DOTFILES/antibody/bundles.txt" > "$HOME/.zsh_plugins.sh"
   antibody update
 }
 
 update_vscode_extensions() {
-	code --list-extensions >$DOTFILES/vscode/extensions.txt
+	code --list-extensions > "$DOTFILES/vscode/extensions.txt"
 }
 
 update_vscode_settings() {
-	cat "$HOME/Library/Application Support/Code/User/settings.json" > "$HOME/.dotfiles/vscode/settings.json"
-	cat "$HOME/Library/Application Support/Code/User/keybindings.json" > "$HOME/.dotfiles/vscode/keybindings.json"
-	cp -R "$HOME/Library/Application Support/Code/User/snippets" "$HOME/.dotfiles/vscode/snippets"
+	cat "$HOME/Library/Application Support/Code/User/settings.json" > "$DOTFILES/vscode/settings.json"
+	cat "$HOME/Library/Application Support/Code/User/keybindings.json" > "$DOTFILES/vscode/keybindings.json"
+	cp -R "$HOME/Library/Application Support/Code/User/snippets" "$DOTFILES/vscode/snippets"
 }
 
 # create custom vscode profile
 create_vscode_profile () {
 	if [ "$1" ]; then
 		 # body
-		 directory="$HOME/.dotfiles/vscode/profiles/$1"
+		 directory="$DOTFILES/vscode/profiles/$1"
 		 if [ -d "$directory" ]; then
 			 echo "😅 Profile already exists"
 
@@ -52,10 +52,10 @@ create_vscode_profile () {
 		 fi
 
 		 echo "📦 Creating profile $1"
-		 mkdir -p "$HOME/.dotfiles/vscode/profiles/$1/exts"
+		 mkdir -p "$DOTFILES/vscode/profiles/$1/exts"
 
 		 echo "🔗 Creating alias for profile"
-		 echo "\n#Vscode profile \nalias code-$1=\"code --extensions-dir $HOME/.dotfiles/vscode/profiles/$1/exts\"" >> "$HOME/.dotfiles/alias/alias.sh"
+		 echo "\n#Vscode profile \nalias code-$1=\"code --extensions-dir $DOTFILES/vscode/profiles/$1/exts\"" >> "$DOTFILES/alias/alias.sh"
 
 		 echo "🛀🏽 Alias code-$1 created"
 	else
@@ -87,7 +87,7 @@ use_latest_xcode() {
 
 teardown() {
 	echo "👋🏽  Prepaing to teardown"
-	"$HOME/.dotfiles/teardown.sh"
+	"$DOTFILES/teardown.sh"
 }
 
 fix_compdef_issues() {
