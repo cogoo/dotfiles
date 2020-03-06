@@ -100,3 +100,14 @@ fix_compdef_issues() {
 	#Regenerate completions file
 	compinit
 }
+
+update_installed_programs() {
+	echo "TODO: update brew packages"
+}
+
+update_all() {
+	update_antibody_plugins
+	update_vscode_extensions
+	update_vscode_settings
+	update_installed_programs
+}
