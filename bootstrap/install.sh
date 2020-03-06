@@ -163,19 +163,71 @@ install_flutter(){
 	gem install cocoapods
 }
 
-install_homebrew
-update_homebrew
-install_rvm
-install_packages
-install_apps
-install_fonts
-install_nvm
-setup_node
-install_npm_packages
-install_tmuxinator
-install_antibody
-setup_project_folders
-install_flutter
+read -ep "Install homebrew? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_homebrew
+fi
+
+read -ep "Update homebrew? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	update_homebrew
+fi
+
+read -ep "Install RVM? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_rvm
+fi
+
+read -ep "Install Packages? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_packages
+fi
+
+read -ep "Install Apps? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_apps
+fi
+
+read -ep "Install Fonts? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_fonts
+fi
+
+read -ep "Install NVM? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_nvm
+fi
+
+read -ep "Set-up Node? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	setup_node
+fi
+
+read -ep "Install NPM packages? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_npm_packages
+fi
+
+read -ep "Install Tmuxinator? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_tmuxinator
+fi
+
+read -ep "Install Antibody? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_antibody
+fi
+
+read -ep "Setup project folders? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	setup_project_folders
+fi
+
+read -ep "Install Flutter? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	install_flutter
+fi
+
 #cleanup_homebrew
 
 echo "Bootstrapping complete"

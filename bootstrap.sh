@@ -6,7 +6,22 @@ git pull origin master;
 #set default terminal to zsh
 #chsh -s /bin/zsh
 
-./bootstrap/install.sh
-./vscode/install.sh
-./antibody/install.sh
-./symlinks/symlinks.sh
+read -ep "Run bootstap? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	./bootstrap/install.sh
+fi
+
+read -ep "Install IDE settings? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	./vscode/install.sh
+fi
+
+read -ep "Install Antibody Plugins? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	./antibody/install.sh
+fi
+
+read -ep "Register symlinks? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	./symlinks/symlinks.sh
+fi

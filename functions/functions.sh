@@ -84,3 +84,8 @@ use_latest_xcode() {
 	sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
  	sudo xcodebuild -runFirstLaunch
 }
+
+teardown() {
+	echo "👋🏽  Prepaing to teardown"
+	"$HOME/.dotfiles/teardown.sh"
+}
