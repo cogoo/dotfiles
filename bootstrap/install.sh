@@ -125,7 +125,7 @@ install_apps() {
 
 install_fonts() {
 	echo "📦 Installing fonts..."
-	brew tap caskroom/fonts
+	brew tap homebrew/cask-fonts
 	brew cask install ${FONTS[@]}
 }
 
