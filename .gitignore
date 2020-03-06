@@ -3,3 +3,4 @@ bin
 **/exts/**
 # !**/exts/**.txt
 .env
+.DS_STORE

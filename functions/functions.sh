@@ -34,6 +34,12 @@ update_vscode_extensions() {
 	code --list-extensions >$DOTFILES/vscode/extensions.txt
 }
 
+update_vscode_settings() {
+	cat "$HOME/Library/Application Support/Code/User/settings.json" > "$HOME/.dotfiles/vscode/settings.json"
+	cat "$HOME/Library/Application Support/Code/User/keybindings.json" > "$HOME/.dotfiles/vscode/keybindings.json"
+	cp -R "$HOME/Library/Application Support/Code/User/snippets" "$HOME/.dotfiles/vscode/snippets"
+}
+
 # create custom vscode profile
 create_vscode_profile () {
 	if [ "$1" ]; then
@@ -73,7 +79,6 @@ add_missing_functions() {
 	echo "🎗 Run only once"
 	complete -C _fastlane_complete.rb fastlane
 }
-
 
 use_latest_xcode() {
 	sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
