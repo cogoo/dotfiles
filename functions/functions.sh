@@ -26,7 +26,7 @@ chpwd() {
 }
 
 update_antibody_plugins() {
-  antibody bundle < ~/.dotfiles/antibody/bundles.txt >~/.zsh_plugins.sh
+  antibody bundle < ~/.dotfiles/antibody/bundles.txt > ~/.zsh_plugins.sh
   antibody update
 }
 
@@ -88,4 +88,15 @@ use_latest_xcode() {
 teardown() {
 	echo "👋🏽  Prepaing to teardown"
 	"$HOME/.dotfiles/teardown.sh"
+}
+
+fix_compdef_issues() {
+	#This will perform chmod g-w for each file returned by compaudit to remove write access for group
+	compaudit | xargs -I % chmod g-w "%"
+	#This will perform chown to current user (Windows and Linux) for each file returned by compaudit
+	compaudit | xargs -I % chown $USER "%"
+	#Remove all dump files (which normally speed up initialization)
+	rm ~/.zcompdump*
+	#Regenerate completions file
+	compinit
 }

@@ -7,7 +7,6 @@ zsh-users/zsh-syntax-highlighting
 leafgarland/typescript-vim
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-lukechilds/zsh-better-npm-completion
 robbyrussell/oh-my-zsh
 
 # Oh-my-zsh Plugins
