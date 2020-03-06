@@ -1,27 +1,35 @@
 #!/bin/sh
-cd ~/.dotfiles
+cd "$HOME/.dotfiles"
 
-git pull origin master;
+read -ep "👌🏾  Get latest version? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+	git pull origin master;
+fi
 
 #set default terminal to zsh
 #chsh -s /bin/zsh
 
-read -ep "Run bootstap? (y/n) " ANSWER
+read -ep "🏃🏽‍♂️  Run bootstap? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
 	./bootstrap/install.sh
 fi
 
-read -ep "Install IDE settings? (y/n) " ANSWER
+read -ep "🎙  Install IDE settings? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
 	./vscode/install.sh
 fi
 
-read -ep "Install Antibody Plugins? (y/n) " ANSWER
+read -ep "🎙  Install Antibody Plugins? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
 	./antibody/install.sh
 fi
 
-read -ep "Register symlinks? (y/n) " ANSWER
+read -ep "⛓  Register symlinks? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
-	./symlinks/symlinks.sh
+	./symlinks/install.sh
+fi
+
+read -ep "🕶  Set Mac defaults? (y/n) " ANSWER
+if [ "$ANSWER" = "y" ]; then
+  ./macos/install.sh
 fi
