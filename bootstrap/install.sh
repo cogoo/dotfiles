@@ -58,7 +58,7 @@ cleanup_homebrew() {
 }
 
 install_packages() {
-	local PCKGS_FILE="$DOTFILES/bootstrap/brew_packages.txt"
+	local PCKGS_FILE="$DOTFILES/bootstrap/brew_packages"
 
 	if [ -f "$PCKGS_FILE" ]; then
 		echo "📦 Installing packages..."
@@ -74,7 +74,7 @@ install_packages() {
 
 install_apps() {
 	brew tap homebrew/cask-versions
-	local CASKS_FILE="$DOTFILES/bootstrap/brew_casks.txt"
+	local CASKS_FILE="$DOTFILES/bootstrap/brew_casks"
 
 	if [ -f "$CASKS_FILE" ]; then
 		while IFS= read -r cask
@@ -89,7 +89,7 @@ install_apps() {
 install_fonts() {
 	echo "📦 Installing fonts..."
 	brew tap homebrew/cask-fonts
-	local FONTS_FILE="$DOTFILES/bootstrap/brew_fonts.txt"
+	local FONTS_FILE="$DOTFILES/bootstrap/brew_fonts"
 
 	if [ -f "$FONTS_FILE" ]; then
 		while IFS= read -r font
@@ -102,7 +102,7 @@ install_fonts() {
 
 install_npm_packages() {
 	echo "📦 Installing Global NPM packages..."
-	local NPM_GLOBALS="$DOTFILES/bootstrap/npm_globals.txt"
+	local NPM_GLOBALS="$DOTFILES/bootstrap/npm_globals"
 
 	if [ -f "$NPM_GLOBALS" ]; then
 		# check if package exists
@@ -110,6 +110,9 @@ install_npm_packages() {
 		do
 		npm i -g ${npm_pckg}
 		done < "$NPM_GLOBALS"
+
+		# Set-up NVM globals
+		cp "$NPM_GLOBALS" "$NVM_DIR/default-packages"
 	fi
 }
 

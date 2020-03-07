@@ -6,3 +6,5 @@ commitizen
 git-cz
 np
 yarn
+@ionic/cli
+firebase-tools

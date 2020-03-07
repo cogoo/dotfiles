@@ -1,6 +1,6 @@
 #!/bin/sh
 
-EXTENSIONS_FILE="$HOME/.dotfiles/vscode/extensions.txt"
+EXTENSIONS_FILE="$HOME/.dotfiles/vscode/extensions"
 SETTINGS_FILE="$HOME/.dotfiles/vscode/settings.json"
 KEYBINDINGS_FILE="$HOME/.dotfiles/vscode/keybindings.json"
 SNIPPETS_DIR="$HOME/.dotfiles/vscode/snippets"
