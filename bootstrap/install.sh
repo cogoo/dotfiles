@@ -7,50 +7,6 @@ echo "🚀 Starting bootstrap"
 # Ask for the administrator password upfront
 sudo -v
 
-PACKAGES=(
-	git
-	tmux
-	tree
-	vim
-	pyenv
-	pyenv-virtualenv
-	npx
-	starship
-	exa
-	tmuxinator
-	fastlane
-)
-
-CASKS=(
-	visual-studio-code
-	firefox-developer-edition
-	iterm2
-	insomnia
-	google-cloud-sdk
-	obinslab-starter
-	docker
-	virtualbox
-	dash
-	alfred
-	java
-	google-chrome
-)
-
-FONTS=(
-	font-fira-code
-)
-
-NPM_GLOBALS=(
-	@angular/cli
-	@angular-devkit/schematics-cli
-	@nestjs/cli
-	@nrwl/schematics
-	commitizen
-	git-cz
-	np
-	yarn
-)
-
 GEMS=(
 	rest-client
 )
@@ -69,7 +25,6 @@ update_homebrew() {
 	brew update
 }
 
-#TODO: refactor to check if ~/.nvm folder exists
 install_nvm() {
 	echo "😎 Installing NVM..."
 	export NVM_DIR="$HOME/.nvm" && (
@@ -103,38 +58,59 @@ cleanup_homebrew() {
 }
 
 install_packages() {
-	echo "📦 Installing packages..."
-	for pkg in ${PACKAGES[@]}; do
-		# skip exisiting packages
-		command -v "${pkg}" &>/dev/null && continue
+	local PCKGS_FILE="$DOTFILES/bootstrap/brew_packages.txt"
 
-		echo "📦 Installing: ${pkg}"
-		brew install ${pkg}
-	done
+	if [ -f "$PCKGS_FILE" ]; then
+		echo "📦 Installing packages..."
+		while IFS= read -r pckg
+		do
+		command -v "${pckg}" &>/dev/null && continue
+
+		echo "📦 Installing: ${pckg}"
+		brew install ${pckg}
+		done < "$PCKGS_FILE"
+	fi
 }
 
 install_apps() {
 	brew tap homebrew/cask-versions
+	local CASKS_FILE="$DOTFILES/bootstrap/brew_casks.txt"
 
-	#TODO: check if app already exists
-	for app in ${CASKS[@]}; do
-		echo "📦 Installing ${app}"
-		brew cask install ${app}
-	done
+	if [ -f "$CASKS_FILE" ]; then
+		while IFS= read -r cask
+		do
+		#TODO: check if app already exists
+		echo "📦 Installing ${cask}"
+		brew cask install ${cask}
+		done < "$CASKS_FILE"
+	fi
 }
 
 install_fonts() {
 	echo "📦 Installing fonts..."
 	brew tap homebrew/cask-fonts
-	brew cask install ${FONTS[@]}
+	local FONTS_FILE="$DOTFILES/bootstrap/brew_fonts.txt"
+
+	if [ -f "$FONTS_FILE" ]; then
+		while IFS= read -r font
+		do
+		echo "📦 Installing ${font}"
+		brew cask install ${font}
+		done < "$FONTS_FILE"
+	fi
 }
 
 install_npm_packages() {
 	echo "📦 Installing Global NPM packages..."
-	# check if package exists
-	for pkg in ${NPM_GLOBALS[@]}; do
-		npm i -g ${pkg}
-	done
+	local NPM_GLOBALS="$DOTFILES/bootstrap/npm_globals.txt"
+
+	if [ -f "$NPM_GLOBALS" ]; then
+		# check if package exists
+		while IFS= read -r npm_pckg
+		do
+		npm i -g ${npm_pckg}
+		done < "$NPM_GLOBALS"
+	fi
 }
 
 install_antibody() {

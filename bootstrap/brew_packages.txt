@@ -1,0 +1,11 @@
+git
+tmux
+tree
+vim
+pyenv
+pyenv-virtualenv
+npx
+starship
+exa
+tmuxinator
+fastlane

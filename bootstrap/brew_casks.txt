@@ -1,0 +1,12 @@
+visual-studio-code
+firefox-developer-edition
+iterm2
+insomnia
+google-cloud-sdk
+obinslab-starter
+docker
+virtualbox
+dash
+alfred
+java
+google-chrome
