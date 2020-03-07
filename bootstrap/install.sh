@@ -222,4 +222,4 @@ fi
 
 #cleanup_homebrew
 
-echo "Bootstrapping complete"
+echo "\\n🦁  Bootstrapping complete \\n"

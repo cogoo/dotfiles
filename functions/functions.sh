@@ -26,18 +26,18 @@ chpwd() {
 }
 
 update_antibody_plugins() {
-  antibody bundle < "$DOTFILES/antibody/bundles.txt" > "$HOME/.zsh_plugins.sh"
+  antibody bundle < "$DOTFILES/antibody/bundles" > "$HOME/.zsh_plugins.sh"
   antibody update
 }
 
 update_vscode_extensions() {
-	code --list-extensions > "$DOTFILES/vscode/extensions.txt"
+	code --list-extensions > "$DOTFILES/vscode/extensions"
 }
 
 update_vscode_settings() {
 	cat "$HOME/Library/Application Support/Code/User/settings.json" > "$DOTFILES/vscode/settings.json"
 	cat "$HOME/Library/Application Support/Code/User/keybindings.json" > "$DOTFILES/vscode/keybindings.json"
-	cp -R "$HOME/Library/Application Support/Code/User/snippets" "$DOTFILES/vscode/snippets"
+	cp -R "$HOME/Library/Application Support/Code/User/snippets" "$DOTFILES/vscode"
 }
 
 # create custom vscode profile

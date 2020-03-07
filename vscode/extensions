@@ -51,6 +51,7 @@ juliensanmartin.vscode-depcheck
 kenhowardpdx.vscode-gist
 kleber-swf.ocean-dark-extended
 lannonbr.vscode-js-annotations
+mads-hartmann.bash-ide-vscode
 magicstack.MagicPython
 miguelsolorio.min-theme
 Mikael.Angular-BeastCode
@@ -81,7 +82,7 @@ pranaygp.vscode-css-peek
 quicktype.quicktype
 redhat.vscode-yaml
 Remisa.shellman
-shakram02.bash-beautify
+SimonSiefke.svg-preview
 smockle.xcode-default-theme
 steoates.autoimport
 taniarascia.new-moon-vscode
