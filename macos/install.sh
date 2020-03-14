@@ -66,3 +66,9 @@ defaults write com.apple.dock orientation right
 
 # Set dock tilesize
 defaults write com.apple.dock tilesize 24
+
+# Install Xcode cli
+xcode-select --install
+
+# Enable xcode cli tools
+sudo xcode-select --switch /Library/Developer/CommandLineTools

@@ -64,3 +64,5 @@ export "JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/H
 if [ -f "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then
 	. "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc";
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

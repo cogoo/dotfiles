@@ -2,7 +2,7 @@
 	excludesfile = /Users/colin.ogoo/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -19,10 +19,11 @@
 	last = log --graph -1 HEAD
 	b = branch
 	a = add
-	amend = !git a -A && git commit --amend --no-edit
+	amend = !git commit --amend --no-edit
+	amend-a = !git a -A && git commit --amend --no-edit
+	amend-m = !git commit --amend
 	l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	amend-commit = !git a -A && git commit --amend
 	p = push origin $(git rev-parse --abbrev-ref HEAD)
 	new = checkout -b
 	f = fetch --all
@@ -30,7 +31,7 @@
 	clear = reset --hard
 	undo-commit = reset HEAD~1
 	unstage = reset HEAD --
-	discard = checkout -- 
+	discard = checkout --
 	save = stash save -u
 	last-month = !git l --author=colin --reverse --since=1.month.ago --date=short --all
 	show-stash = stash show -p
