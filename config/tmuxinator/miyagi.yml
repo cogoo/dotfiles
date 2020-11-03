@@ -11,7 +11,7 @@ root: ~/LocalHost/bynd/gweb-miyagi
 
 # Project hooks
 # Runs on project start, always
-# on_project_start: make cloudsdk-start
+on_project_start: export MIYAGI_CLOUD_SDK_ROOT_DIR=$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
@@ -48,12 +48,11 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - npm run start digital-workshop
-        - npm run start digital-workshop-api
+        - npm run start:digital-workshop
   - storybook:
       root: ~/LocalHost/bynd/gweb-miyagi/web-frontend
       panes: 
-        - npm run storybook
+        - printf "npm run storybook"
   - ajsDev:
       layout: main-vertical
       panes:

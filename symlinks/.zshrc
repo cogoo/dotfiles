@@ -15,16 +15,15 @@ export NVM_DIR="$HOME/.nvm"
 
 # Set manual global installs
 if [ -d "$HOME/LocalHost/Global" ]; then
-  export GLOBAL_INSTALLS_PATH="$HOME/LocalHost/Global"
+	export GLOBAL_INSTALLS_PATH="$HOME/LocalHost/Global"
 fi
 
 # Set brew cask install root
 export CASKROOM="/usr/local/Caskroom"
 
-
 # The next line updates PATH for Flutter.
 if [ -f "$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc" ]; then
-	. "$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc";
+	. "$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc"
 fi
 
 # Antibody oh-my-zsh fix
@@ -62,7 +61,7 @@ export "JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/H
 
 # Setup devserverapp.py
 if [ -f "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then
-	. "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc";
+	. "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

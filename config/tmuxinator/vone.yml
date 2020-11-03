@@ -1,7 +1,7 @@
 # /Users/colin.ogoo/.config/tmuxinator/vone.yml
 
 name: vone
-root: ~/LocalHost/github/v-one
+root: ~/LocalHost/github/vone
 
 # Optional tmux socket
 # socket_name: foo
@@ -11,7 +11,7 @@ root: ~/LocalHost/github/v-one
 
 # Project hooks
 # Runs on project start, always
-on_project_start: code vone.code-workspace
+# on_project_start: code vone.code-workspace
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
@@ -41,5 +41,4 @@ on_project_start: code vone.code-workspace
 
 windows:
   - scratchPad:
-  - cc: coaching-app
-  - hobby: hobby-hut
+  - hobby: v1hobbyhut && npm run start

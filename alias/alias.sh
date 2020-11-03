@@ -36,10 +36,14 @@ alias gitconfig="vim ~/.gitconfig"
 alias zshconfig="vim ~/.zshrc"
 alias vi="vim"
 alias c="clear"
-# alias ls="tree -C -ap -L 1 -I node_modules"
-alias ls="exa"
 alias tree="tree -C -ap -I node_modules"
 alias ports-in-use="lsof -PiTCP -sTCP:LISTEN"
+# alias ls="tree -C -ap -L 1 -I node_modules"
 
-# Vscode profile
-alias code-shell="code --extensions-dir /Users/colin.ogoo/.dotfiles/vscode/profiles/shell/exts"
+# Rust tools
+alias ls="exa"
+alias cat="bat"
+alias find="fd"
+alias ps="procs"
+alias du="dust"
+alias grep="rg"
