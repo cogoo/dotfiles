@@ -29,6 +29,7 @@ alias docker-rmi-all='docker rmi -f `docker images -q`'
 
 # Tmux
 alias tk="tkss"
+alias tkk="tksv"
 alias tls="tmux ls"
 
 # Shortcuts
@@ -40,6 +41,3 @@ alias c="clear"
 alias ls="exa"
 alias tree="tree -C -ap -I node_modules"
 alias ports-in-use="lsof -PiTCP -sTCP:LISTEN"
-
-# Vscode profile
-alias code-shell="code --extensions-dir /Users/colin.ogoo/.dotfiles/vscode/profiles/shell/exts"

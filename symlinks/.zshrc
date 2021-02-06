@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Set dotfiles path
 export DOTFILES="$HOME/.dotfiles"
 
@@ -21,10 +23,9 @@ fi
 # Set brew cask install root
 export CASKROOM="/usr/local/Caskroom"
 
-
 # The next line updates PATH for Flutter.
 if [ -f "$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc" ]; then
-	. "$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc";
+  . "$GLOBAL_INSTALLS_PATH/flutter/path.zsh.inc"
 fi
 
 # Antibody oh-my-zsh fix
@@ -38,7 +39,7 @@ ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SL
 . "$DOTFILES/alias/alias.sh"
 
 if [ -f "$HOME/.fastlane/completions/completion.sh" ]; then
-	. "$HOME/.fastlane/completions/completion.sh"
+  . "$HOME/.fastlane/completions/completion.sh"
 fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -62,7 +63,7 @@ export "JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/H
 
 # Setup devserverapp.py
 if [ -f "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then
-	. "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc";
+  . "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "$HOME/.fzf.zsh" ] && . "$HOME/.fzf.zsh"
