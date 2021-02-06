@@ -8,6 +8,7 @@ leafgarland/typescript-vim
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 robbyrussell/oh-my-zsh
+lukechilds/zsh-better-npm-completion
 
 # Oh-my-zsh Plugins
 robbyrussell/oh-my-zsh path:plugins/git

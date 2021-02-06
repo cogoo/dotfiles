@@ -1,10 +1,8 @@
 @angular/cli
 @angular-devkit/schematics-cli
-@nestjs/cli
 @nrwl/schematics
 commitizen
 git-cz
 np
 yarn
-@ionic/cli
 firebase-tools

@@ -72,3 +72,8 @@ xcode-select --install
 
 # Enable xcode cli tools
 sudo xcode-select --switch /Library/Developer/CommandLineTools
+
+################################################################################
+# Bluetooth Settings                                                           #
+################################################################################
+sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true
