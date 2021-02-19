@@ -1,7 +1,6 @@
 # Plugins
 djui/alias-tips
 caarlos0/zsh-mkc
-caarlos0/open-pr kind:path
 caarlos0/zsh-git-sync kind:path
 zsh-users/zsh-syntax-highlighting
 leafgarland/typescript-vim
