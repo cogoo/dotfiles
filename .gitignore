@@ -4,3 +4,4 @@ bin
 # !**/exts/**.txt
 .env
 .DS_STORE
+flutter
