@@ -3,6 +3,7 @@
 @nrwl/schematics
 commitizen
 git-cz
+cz-conventional-changelog
 np
 yarn
 firebase-tools

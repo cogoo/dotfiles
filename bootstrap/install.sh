@@ -7,10 +7,6 @@ echo "🚀 Starting bootstrap"
 # Ask for the administrator password upfront
 sudo -v
 
-GEMS=(
-  rest-client
-)
-
 install_homebrew() {
   if test "$(which brew)"; then
     echo "😊 Homebrew installed..."
@@ -104,11 +100,12 @@ install_npm_packages() {
   if [ -f "$NPM_GLOBALS" ]; then
     # check if package exists
     while IFS= read -r npm_pckg; do
-      npm i -g "${npm_pckg} -f"
+      npm i -gf "${npm_pckg}"
     done <"$NPM_GLOBALS"
 
     # Set-up NVM globals
     cp "$NPM_GLOBALS" "$NVM_DIR/default-packages"
+    cp "../config/changelog.config.js" "$HOME"
   fi
 }
 
@@ -126,7 +123,6 @@ install_tmuxinator() {
 setup_project_folders() {
   GITHUB_DIR="$HOME/LocalHost/GitHub"
   GLOBAL_DIR="$HOME/LocalHost/Global"
-  BYND_DIR="$HOME/LocalHost/BYND"
 
   echo "Creating folder structure..."
 
@@ -136,10 +132,6 @@ setup_project_folders() {
 
   if ! [ -d "$GLOBAL_DIR" ]; then
     mkdir -p "$GLOBAL_DIR"
-  fi
-
-  if ! [ -d "$BYND_DIR" ]; then
-    mkdir -p "$BYND_DIR"
   fi
 }
 

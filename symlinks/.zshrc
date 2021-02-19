@@ -7,6 +7,7 @@ export DOTFILES="$HOME/.dotfiles"
 COMPLETION_WAITING_DOTS="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 DISABLE_AUTO_UPDATE=true
+ZSH_DISABLE_COMPFIX=true
 
 # Add default editor
 export EDITOR='vim'
@@ -67,3 +68,5 @@ if [ -f "$CASKROOM/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; the
 fi
 
 [ -f "$HOME/.fzf.zsh" ] && . "$HOME/.fzf.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
