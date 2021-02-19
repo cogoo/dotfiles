@@ -79,7 +79,7 @@ install_apps() {
     while IFS= read -r cask; do
       #TODO: check if app already exists
       echo "📦 Installing ${cask}"
-      brew cask install "${cask}"
+      brew install --cask "${cask}"
     done <"$CASKS_FILE"
   fi
 }
@@ -92,7 +92,7 @@ install_fonts() {
   if [ -f "$FONTS_FILE" ]; then
     while IFS= read -r font; do
       echo "📦 Installing ${font}"
-      brew cask install "${font}"
+      brew install --cask "${font}"
     done <"$FONTS_FILE"
   fi
 }
@@ -104,7 +104,7 @@ install_npm_packages() {
   if [ -f "$NPM_GLOBALS" ]; then
     # check if package exists
     while IFS= read -r npm_pckg; do
-      npm i -g "${npm_pckg}"
+      npm i -g "${npm_pckg} -f"
     done <"$NPM_GLOBALS"
 
     # Set-up NVM globals
