@@ -17,7 +17,7 @@ git clone https://github.com/cogoo/.dotfiles.git ~/
 Run the bootstrap script
 
 ```sh
-~/.dotfiles/bootstrap.sh
+make configure-mac
 ```
 
 > The file should have the executable permission, if not, enable by running
