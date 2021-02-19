@@ -1,12 +1,15 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Auto switch node version
 load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+  local node_version
+  node_version="$(nvm version)"
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
 
   if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
     if [ "$nvmrc_node_version" != "N/A" ] && [ "$nvmrc_node_version" != "$node_version" ]; then
       nvm use
@@ -26,88 +29,51 @@ chpwd() {
 }
 
 update_antibody_plugins() {
-  antibody bundle < "$DOTFILES/antibody/bundles" > "$HOME/.zsh_plugins.sh"
+  antibody bundle <"$DOTFILES/antibody/bundles" >"$HOME/.zsh_plugins.sh"
   antibody update
-}
-
-update_vscode_extensions() {
-	code --list-extensions > "$DOTFILES/vscode/extensions"
-}
-
-update_vscode_settings() {
-	cat "$HOME/Library/Application Support/Code/User/settings.json" > "$DOTFILES/vscode/settings.json"
-	cat "$HOME/Library/Application Support/Code/User/keybindings.json" > "$DOTFILES/vscode/keybindings.json"
-	cp -R "$HOME/Library/Application Support/Code/User/snippets" "$DOTFILES/vscode"
-}
-
-# create custom vscode profile
-create_vscode_profile () {
-	if [ "$1" ]; then
-		 # body
-		 directory="$DOTFILES/vscode/profiles/$1"
-		 if [ -d "$directory" ]; then
-			 echo "😅 Profile already exists"
-
-			 return
-		 fi
-
-		 echo "📦 Creating profile $1"
-		 mkdir -p "$DOTFILES/vscode/profiles/$1/exts"
-
-		 echo "🔗 Creating alias for profile"
-		 echo "\n#Vscode profile \nalias code-$1=\"code --extensions-dir $DOTFILES/vscode/profiles/$1/exts\"" >> "$DOTFILES/alias/alias.sh"
-
-		 echo "🛀🏽 Alias code-$1 created"
-	else
-		 # body
-		 echo "😅 Please specify a name"
-		 return
-	fi
 }
 
 # find all node_modules folders and list the size
 audit_node_modules() {
-	echo '🏋🏽‍♂️  finding node_modules folders \n'
-	npx npkill
+  printf '🏋🏽‍♂️  finding node_modules folders \n'
+  npx npkill
 }
 
 fix_rvm() {
-	brew reinstall ruby vim
+  brew reinstall ruby vim
 }
 
 add_missing_functions() {
-	echo "🎗 Run only once"
-	complete -C _fastlane_complete.rb fastlane
+  echo "🎗 Run only once"
+  complete -C _fastlane_complete.rb fastlane
 }
 
 use_latest_xcode() {
-	sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
- 	sudo xcodebuild -runFirstLaunch
+  sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+  sudo xcodebuild -runFirstLaunch
 }
 
 teardown() {
-	echo "👋🏽  Prepaing to teardown"
-	"$DOTFILES/teardown.sh"
+  echo "👋🏽  Prepaing to teardown"
+  "$DOTFILES/teardown.sh"
 }
 
 fix_compdef_issues() {
-	#This will perform chmod g-w for each file returned by compaudit to remove write access for group
-	compaudit | xargs -I % chmod g-w "%"
-	#This will perform chown to current user (Windows and Linux) for each file returned by compaudit
-	compaudit | xargs -I % chown $USER "%"
-	#Remove all dump files (which normally speed up initialization)
-	rm ~/.zcompdump*
-	#Regenerate completions file
-	compinit
+  #This will perform chmod g-w for each file returned by compaudit to remove write access for group
+  compaudit | xargs -I % chmod g-w "%"
+  #This will perform chown to current user (Windows and Linux) for each file returned by compaudit
+  compaudit | xargs -I % chown "$USER" "%"
+  #Remove all dump files (which normally speed up initialization)
+  rm ~/.zcompdump*
+  #Regenerate completions file
+  compinit
 }
 
 update_installed_programs() {
-	echo "TODO: update brew packages"
+  echo "TODO: update brew packages"
 }
 
 update_all() {
-	update_antibody_plugins
-	update_vscode_extensions
-	update_vscode_settings
-	update_installed_programs
+  update_antibody_plugins
+  update_installed_programs
 }

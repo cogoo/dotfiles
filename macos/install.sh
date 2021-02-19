@@ -10,7 +10,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
 
 ###############################################################################
 # Launch Services                                                             #
@@ -62,7 +66,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 ###############################################################################
 
 # Set dock orientation
-defaults write com.apple.dock orientation right
+defaults write com.apple.dock orientation left
 
 # Set dock tilesize
 defaults write com.apple.dock tilesize 24
@@ -76,4 +80,4 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
 ################################################################################
 # Bluetooth Settings                                                           #
 ################################################################################
-sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true
+# sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true

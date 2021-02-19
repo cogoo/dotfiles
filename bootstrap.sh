@@ -1,9 +1,10 @@
-#!/bin/sh
-cd "$HOME/.dotfiles"
+#!/usr/bin/env bash
+
+cd "$HOME/.dotfiles" || exit
 
 read -ep "👌🏾  Get latest version? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
-	git pull origin master;
+  git pull origin master
 fi
 
 #set default terminal to zsh
@@ -11,22 +12,22 @@ fi
 
 read -ep "🏃🏽‍♂️  Run bootstap? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
-	./bootstrap/install.sh
+  ./bootstrap/install.sh
 fi
 
 read -ep "🎙  Install IDE settings? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
-	./vscode/install.sh
+  ./vscode/install.sh
 fi
 
 read -ep "🎙  Install Antibody Plugins? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
-	./antibody/install.sh
+  ./antibody/install.sh
 fi
 
 read -ep "⛓  Register symlinks? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
-	./symlinks/install.sh
+  ./symlinks/install.sh
 fi
 
 read -ep "🕶  Set Mac defaults? (y/n) " ANSWER
