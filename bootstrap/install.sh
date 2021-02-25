@@ -105,7 +105,6 @@ install_npm_packages() {
 
     # Set-up NVM globals
     cp "$NPM_GLOBALS" "$NVM_DIR/default-packages"
-    cp "../config/changelog.config.js" "$HOME"
   fi
 }
 
