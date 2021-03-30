@@ -17,3 +17,6 @@ dust
 ripgrep
 gh
 jq
+fx
+txn2/tap/kubefwd
+grex

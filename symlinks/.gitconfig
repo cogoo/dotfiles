@@ -34,11 +34,12 @@ unstage = reset HEAD --
 discard = checkout --
 save = stash save -k -u
 save-a = stash save -u
-last-month = !git l --author=colin --reverse --since=1.month.ago --date=short --all
 show-stash = stash show -p
 d = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFXS; }; f"
-patch = !git --no-pager diff --no-color # git patch > changes.patch
-lch = rev-parse HEAD
+patch = !git --no-pager diff --no-color            # git patch > changes.patch
+lch = rev-parse HEAD                               # last commit hash
+assume-unchanged = update-index --assume-unchanged # temp ignore changes in a file
+no-assume-unchanged = update-index --no-assume-unchanged
 [pager]
 diff = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
 
