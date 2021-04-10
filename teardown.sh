@@ -5,7 +5,7 @@ delete_project_folders() {
 
   echo "Deleting LocalHost folder..."
 
-  if [ -d "$GITHUB_DIR" ]; then
+  if [ -d "$LOCALHOST_DIR" ]; then
     rm -rf "$LOCALHOST_DIR"
   fi
 }
