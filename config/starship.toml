@@ -9,7 +9,7 @@ error_symbol = "✗"
 disabled = true
 
 [git_branch]
-style = "fg:underline dimmed white"
+style = "underline white"
 
 [git_status]
 style = "bold fg:#e84d31"
