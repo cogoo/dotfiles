@@ -1,18 +1,20 @@
 [directory]
-style = "bold blue"
+style = "bold dimmed fg:#ffcc00"
 
 [character]
 symbol = "$"
 error_symbol = "✗"
-use_symbol_for_status = true
 
 [package]
 disabled = true
 
 [git_branch]
-style = "fg:underline bold dimmed white"
+style = "fg:underline dimmed white"
 
 [git_status]
-style = "bold cyan"
+style = "bold fg:#e84d31"
 show_sync_count = true
 
+[gcloud]
+format = "[$symbol$domain]($style) "
+style = "dimmed white"
