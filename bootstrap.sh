@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd "$HOME/.dotfiles" || exit
+cd "$HOME/dotfiles" || exit
 
 read -ep "👌🏾  Get latest version? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then

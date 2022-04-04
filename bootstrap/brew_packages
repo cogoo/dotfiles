@@ -2,13 +2,8 @@ git
 tmux
 tree
 vim
-pyenv
-pyenv-virtualenv
-npx
 starship
 exa
-tmuxinator
-fastlane
 diff-so-fancy
 bat
 fd
@@ -18,5 +13,4 @@ ripgrep
 gh
 jq
 fx
-txn2/tap/kubefwd
 grex

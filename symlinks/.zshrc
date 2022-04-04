@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set dotfiles path
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/dotfiles"
 
 # ZSH Settings
 COMPLETION_WAITING_DOTS="true"
@@ -70,3 +70,5 @@ fi
 [ -f "$HOME/.fzf.zsh" ] && . "$HOME/.fzf.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

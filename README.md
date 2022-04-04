@@ -11,7 +11,7 @@ These instructions will set-up your Mac to my personal configuration. Use at you
 Clone the project
 
 ```sh
-git clone https://github.com/cogoo/.dotfiles.git ~/
+git clone https://github.com/cogoo/dotfiles.git ~/
 ```
 
 Run the bootstrap script
@@ -22,7 +22,7 @@ make configure-mac
 
 > The file should have the executable permission, if not, enable by running
 >
-> `chmod +x ~/.dotfiles/bootstrap.sh`
+> `chmod +x ~/dotfiles/bootstrap.sh`
 
 ## What is installed
 
