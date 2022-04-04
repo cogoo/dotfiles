@@ -7,6 +7,11 @@ if [ "$ANSWER" = "y" ]; then
   git pull origin master
 fi
 
+read -ep "Install rosetta? (y/n)" ANSWER
+if [ "$ANSWER" = "y" ]; then
+  softwareupdate --install-rosetta
+fi
+
 #set default terminal to zsh
 #chsh -s /bin/zsh
 
