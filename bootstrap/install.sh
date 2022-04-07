@@ -21,31 +21,15 @@ update_homebrew() {
   brew update
 }
 
-install_nvm() {
-  echo "😎 Installing NVM..."
-  export NVM_DIR="$HOME/.nvm" && (
-    git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
-    cd "$NVM_DIR"
-    git checkout $(git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1))
-  ) && \. "$NVM_DIR/nvm.sh"
+install_volta() {
+  echo "😎 Installing Volta..."
+  curl https://get.volta.sh | bash
+
 }
 
 setup_node() {
-  echo "😎 Setting up Node w/ NVM ..."
-  if [ -z "$NVM_DIR" ]; then
-    # NVM_DIR is undefined, so it's not been initialised
-    NVM_DIR="$HOME/.nvm"
-  fi
-
-  . "$NVM_DIR/nvm.sh"
-
-  nvm install lts/dubnium
-  nvm alias default lts/dubnium
-}
-
-install_rvm() {
-  echo "😎 Installing RVM..."
-  ruby -e "$(curl -sSL https://get.rvm.io | bash -s stable --ruby --auto-dotfiles)"
+  # add setup for volta
+  true
 }
 
 cleanup_homebrew() {
@@ -113,33 +97,19 @@ install_antibody() {
   brew install antibody
 }
 
-install_tmuxinator() {
-  # Req: >= ruby@2.4.6
-  echo "📦 Installing TMUXinator..."
-  gem install tmuxinator
-}
-
 setup_project_folders() {
-  GITHUB_DIR="$HOME/LocalHost/GitHub"
-  GLOBAL_DIR="$HOME/LocalHost/Global"
+  GITHUB_DIR="$HOME/GitHub"
 
   echo "Creating folder structure..."
 
   if ! [ -d "$GITHUB_DIR" ]; then
     mkdir -p "$GITHUB_DIR"
   fi
-
-  if ! [ -d "$GLOBAL_DIR" ]; then
-    mkdir -p "$GLOBAL_DIR"
-  fi
 }
 
 install_flutter() {
-  cd "$GLOBAL_DIR" || exit
-  git clone https://github.com/flutter/flutter.git
-
-  # Install cocoapods
-  gem install cocoapods
+  # update install flutter script
+  true
 }
 
 read -ep "Install homebrew? (y/n) " ANSWER
@@ -150,11 +120,6 @@ fi
 read -ep "Update homebrew? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
   update_homebrew
-fi
-
-read -ep "Install RVM? (y/n) " ANSWER
-if [ "$ANSWER" = "y" ]; then
-  install_rvm
 fi
 
 read -ep "Install Packages? (y/n) " ANSWER
@@ -172,9 +137,9 @@ if [ "$ANSWER" = "y" ]; then
   install_fonts
 fi
 
-read -ep "Install NVM? (y/n) " ANSWER
+read -ep "Install Volta? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
-  install_nvm
+  install_volta
 fi
 
 read -ep "Set-up Node? (y/n) " ANSWER
@@ -185,11 +150,6 @@ fi
 read -ep "Install NPM packages? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
   install_npm_packages
-fi
-
-read -ep "Install Tmuxinator? (y/n) " ANSWER
-if [ "$ANSWER" = "y" ]; then
-  install_tmuxinator
 fi
 
 read -ep "Install Antibody? (y/n) " ANSWER

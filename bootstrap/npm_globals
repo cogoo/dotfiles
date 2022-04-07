@@ -1,9 +1,3 @@
-@angular/cli
-@angular-devkit/schematics-cli
-@nrwl/schematics
 commitizen
 cz-conventional-changelog
-np
 yarn
-firebase-tools
-nx

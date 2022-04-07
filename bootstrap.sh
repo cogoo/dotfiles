@@ -20,11 +20,6 @@ if [ "$ANSWER" = "y" ]; then
   ./bootstrap/install.sh
 fi
 
-read -ep "🎙  Install IDE settings? (y/n) " ANSWER
-if [ "$ANSWER" = "y" ]; then
-  ./vscode/install.sh
-fi
-
 read -ep "🎙  Install Antibody Plugins? (y/n) " ANSWER
 if [ "$ANSWER" = "y" ]; then
   ./antibody/install.sh

@@ -3,7 +3,6 @@ djui/alias-tips
 caarlos0/zsh-mkc
 caarlos0/zsh-git-sync kind:path
 zsh-users/zsh-syntax-highlighting
-leafgarland/typescript-vim
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 robbyrussell/oh-my-zsh
@@ -11,8 +10,5 @@ lukechilds/zsh-better-npm-completion
 
 # Oh-my-zsh Plugins
 robbyrussell/oh-my-zsh path:plugins/git
-robbyrussell/oh-my-zsh path:plugins/tmux
 robbyrussell/oh-my-zsh path:plugins/yarn
-robbyrussell/oh-my-zsh path:plugins/ng
-robbyrussell/oh-my-zsh path:plugins/tmuxinator
 robbyrussell/oh-my-zsh path:plugins/z
