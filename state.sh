@@ -10,6 +10,7 @@ VERSION_STATE_FILE="$STATE_DIR/versions.state"
 
 # Bootstrap steps in order
 BOOTSTRAP_STEPS=(
+  "xcode_tools"
   "homebrew"
   "homebrew_update"
   "packages"

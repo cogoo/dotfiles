@@ -71,11 +71,14 @@ defaults write com.apple.dock orientation left
 # Set dock tilesize
 defaults write com.apple.dock tilesize 24
 
-# Install Xcode cli
-xcode-select --install
-
-# Enable xcode cli tools
-sudo xcode-select --switch /Library/Developer/CommandLineTools
+# Xcode CLI tools should already be installed by bootstrap
+# Just ensure they're properly configured
+if xcode-select -p &>/dev/null; then
+  # Enable xcode cli tools
+  sudo xcode-select --switch /Library/Developer/CommandLineTools
+else
+  echo "⚠️  Xcode Command Line Tools not found - they should have been installed earlier"
+fi
 
 ################################################################################
 # Bluetooth Settings                                                           #

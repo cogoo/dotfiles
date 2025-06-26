@@ -4,6 +4,11 @@
 
 echo "🚀 Starting bootstrap"
 
+# Set DOTFILES if not set
+if [ -z "$DOTFILES" ]; then
+  export DOTFILES="$HOME/dotfiles"
+fi
+
 # Load state management
 source "$DOTFILES/state.sh" || source "./state.sh"
 
@@ -30,6 +35,25 @@ ask_or_default() {
 # Ask for the administrator password upfront
 sudo -v
 
+install_xcode_tools() {
+  if xcode-select -p &>/dev/null; then
+    echo "✅ Xcode Command Line Tools already installed, skipping..."
+    return 0
+  fi
+  
+  echo "🔧 Installing Xcode Command Line Tools..."
+  echo "⚠️  This will show a popup - please click 'Install' and wait for completion"
+  xcode-select --install
+  
+  # Wait for installation to complete
+  echo "⏳ Waiting for Xcode Command Line Tools installation..."
+  until xcode-select -p &>/dev/null; do
+    sleep 5
+  done
+  
+  echo "✅ Xcode Command Line Tools installed successfully"
+}
+
 install_homebrew() {
   if test "$(which brew)"; then
     echo "✅ Homebrew already installed, skipping..."
@@ -38,6 +62,13 @@ install_homebrew() {
 
   echo "😎 Installing homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  
+  # Add Homebrew to PATH for this session
+  if [[ -f "/opt/homebrew/bin/brew" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ -f "/usr/local/bin/brew" ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
 }
 
 update_homebrew() {
@@ -227,6 +258,15 @@ install_flutter() {
   # update install flutter script
   true
 }
+
+if ! is_step_complete "xcode_tools"; then
+  ANSWER=$(ask_or_default "Install Xcode Command Line Tools? (y/n)" "y")
+  if [ "$ANSWER" = "y" ]; then
+    install_xcode_tools && mark_step_complete "xcode_tools"
+  fi
+else
+  echo "✅ Xcode Command Line Tools step already completed, skipping..."
+fi
 
 if ! is_step_complete "homebrew"; then
   ANSWER=$(ask_or_default "Install homebrew? (y/n)" "y")

@@ -2,6 +2,9 @@
 
 cd "$HOME/dotfiles" || exit
 
+# Set DOTFILES environment variable
+export DOTFILES="$HOME/dotfiles"
+
 # Load state management
 source ./state.sh
 
@@ -64,12 +67,14 @@ ask_or_default() {
   fi
 }
 
-# Skip if in recovery mode
-if [ "$RECOVERY_MODE" = false ]; then
+# Skip if in recovery mode - but only if git is available
+if [ "$RECOVERY_MODE" = false ] && command -v git &>/dev/null; then
   ANSWER=$(ask_or_default "👌🏾  Get latest version? (y/n)" "y")
   if [ "$ANSWER" = "y" ]; then
     git pull origin master
   fi
+elif [ "$RECOVERY_MODE" = false ]; then
+  echo "⚠️  Git not available yet, skipping update..."
 fi
 
 ANSWER=$(ask_or_default "Install rosetta? (y/n)" "n")
