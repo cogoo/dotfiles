@@ -1,20 +1,67 @@
 [directory]
-style = "bold dimmed fg:#ffcc00"
+style = "bold dimmed fg:#023047"
+truncation_length = 3
+truncate_to_repo = true
 
 [character]
-symbol = "$"
-error_symbol = "✗"
+success_symbol = "[➜](bold #219ebc)"
+error_symbol = "[➜](bold #fb8500)"
+
+[nodejs]
+format = "[$symbol($version)]($style) "
+style = "bold dimmed fg:#219ebc"
+
+[rust]
+format = "[$symbol($version)]($style) "
+style = "bold dimmed fg:#fb8500"
 
 [package]
-disabled = true
+format = "[$symbol$version]($style) "
+style = "#ffb703 dimmed bold"
 
 [git_branch]
-style = "underline white"
+format = "[$symbol$branch]($style) "
+style = "bold underline #FFB703"
 
 [git_status]
-style = "bold fg:#e84d31"
-show_sync_count = true
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold  green"
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+up_to_date = "✓"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = '[+$count](#219ebc)'
+renamed = "👅"
+deleted = "🗑"
+
+[cmd_duration]
+format = "took [$duration]($style) "
+style = "#ffb703 bold"
+min_time = 2000
+
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "#8ecae6"
+time_format = "%H:%M"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡"
+discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 15
+style = "bold #fb8500"
+
+[[battery.display]]
+threshold = 50
+style = "bold #ffb703"
 
 [gcloud]
-format = "[$symbol$domain]($style) "
-style = "dimmed white"
+format = "[$domain]($style) "
+style = "dimmed #8ECAE6"
