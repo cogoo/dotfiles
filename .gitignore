@@ -5,3 +5,4 @@ bin
 .env
 .DS_STORE
 flutter
+.claude
