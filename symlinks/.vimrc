@@ -7,6 +7,9 @@ set number
 " Nerd Tree key bindings
 map <C-b> :NERDTreeToggle<CR>
 
+" Config for JS plugin
+let g:javascript_plugin_jsdoc = 1
+
 " Nerd tree show hidden files
 let NERDTreeShowHidden=1
 
@@ -32,6 +35,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
 
 " Initialize plugin system
 call plug#end()

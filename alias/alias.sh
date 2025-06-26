@@ -17,7 +17,7 @@ alias clone="npx degit"
 alias localip="ipconfig getifaddr en0"
 
 # Brew
-alias get-app="brew cask install"
+alias get-app="brew install --cask"
 alias get="brew install"
 
 # Docker
@@ -28,9 +28,15 @@ alias docker-clear='docker-kill-all;docker-rm-all'
 alias docker-rmi-all='docker rmi -f `docker images -q`'
 
 # Tmux
-alias tk="tkss"
-alias tkk="tksv"
 alias tls="tmux ls"
+
+# Zellij
+
+alias ze="zellij"
+alias zea="zellij a"
+alias zls="zellij ls"
+alias zen="zellij -s ze"
+alias zkk="zellij ka"
 
 # Shortcuts
 alias gitconfig="vim ~/.gitconfig"

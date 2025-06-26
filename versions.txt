@@ -1,0 +1,26 @@
+# Version pinning for critical development tools
+# Format: tool_name=version
+# Use 'latest' for latest version, specific version numbers for pinning
+
+# Node.js/JavaScript
+node=lts
+npm=latest
+typescript=latest
+
+# Rust
+rust=stable
+
+# Development tools
+starship=latest
+exa=latest
+bat=latest
+ripgrep=latest
+fd=latest
+
+# Git tools
+gh=latest
+diff-so-fancy=latest
+
+# System tools
+tree=latest
+jq=latest

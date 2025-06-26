@@ -12,3 +12,6 @@ gh
 jq
 fx
 grex
+rust-analyzer
+cargo-watch
+cargo-edit

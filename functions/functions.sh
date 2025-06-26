@@ -5,9 +5,9 @@ chpwd() {
   clear && exa -la
 }
 
-update_antibody_plugins() {
-  antibody bundle <"$DOTFILES/antibody/bundles" >"$HOME/.zsh_plugins.sh"
-  antibody update
+update_zinit_plugins() {
+  zinit update --all
+  zinit compile --all
 }
 
 # find all node_modules folders and list the size
@@ -38,10 +38,39 @@ fix_compdef_issues() {
 }
 
 update_installed_programs() {
-  echo "TODO: update brew packages"
+  echo "🔄 Updating installed programs..."
+  
+  # Update Homebrew
+  if command -v brew &>/dev/null; then
+    echo "🍺 Updating Homebrew..."
+    brew update
+    brew upgrade
+    brew cleanup
+  fi
+  
+  # Update Node.js packages
+  if command -v npm &>/dev/null; then
+    echo "📦 Updating global NPM packages..."
+    npm update -g
+  fi
+  
+  # Update Volta
+  if command -v volta &>/dev/null; then
+    echo "⚡ Updating Volta..."
+    volta install node@lts
+    volta install npm@latest
+  fi
+  
+  # Update Rust
+  if command -v rustup &>/dev/null; then
+    echo "🦀 Updating Rust..."
+    rustup update
+  fi
+  
+  echo "✅ Update complete"
 }
 
 update_all() {
-  update_antibody_plugins
+  update_zinit_plugins
   update_installed_programs
 }
